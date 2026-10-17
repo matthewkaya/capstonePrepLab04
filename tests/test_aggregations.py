@@ -6,6 +6,7 @@ from weathersummary.aggregations import (
     TemperatureAggregation,
     WarmestDayAggregation,
 )
+from weathersummary.exceptions import WeatherDataError
 from weathersummary.models import WeatherRecord
 
 
@@ -44,7 +45,10 @@ def test_precipitation_aggregation(sample_records):
 def test_warmest_day(sample_records):
     result = WarmestDayAggregation().compute(sample_records)
 
-    assert result == {"date": "2026-10-09", "temperature": 30.0}
+    assert result == {
+        "date": "2026-10-09",
+        "temperature": 30.0,
+    }
 
 
 def test_missing_temperature():
@@ -78,3 +82,16 @@ def test_empty_temperature_records():
 def test_base_aggregation_not_implemented():
     with pytest.raises(NotImplementedError):
         Aggregation().compute([])
+
+
+def test_warmest_day_without_valid_temperatures():
+    records = [
+        WeatherRecord("2026-10-08T10:00", None, 1.0),
+        WeatherRecord("2026-10-08T14:00", None, 2.0),
+    ]
+
+    with pytest.raises(
+        WeatherDataError,
+        match="No valid temperature records available",
+    ):
+        WarmestDayAggregation().compute(records)
