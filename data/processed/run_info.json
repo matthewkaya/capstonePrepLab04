@@ -1,0 +1,16 @@
+{
+  "settings": {
+    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=43.65&longitude=-79.38&hourly=temperature_2m,precipitation&past_days=7&forecast_days=1",
+    "timeout": 10,
+    "output_directory": "data/processed",
+    "seed": 42,
+    "sample_size": 100,
+    "log_level": "INFO"
+  },
+  "python_version": "3.11.17",
+  "tool_versions": {
+    "pytest": "9.1.1",
+    "mypy": "2.4.0",
+    "ruff": "0.17.1"
+  }
+}

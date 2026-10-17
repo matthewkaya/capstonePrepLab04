@@ -1,55 +1,61 @@
 {
-  "source_url": "https://api.open-meteo.com/v1/forecast?latitude=43.65&longitude=-79.38&hourly=temperature_2m,precipitation&past_days=7&forecast_days=0&timezone=America/Toronto",
-  "records_processed": 168,
-  "unique_days": 7,
+  "source_url": "https://api.open-meteo.com/v1/forecast?latitude=43.65&longitude=-79.38&hourly=temperature_2m,precipitation&past_days=7&forecast_days=1",
+  "records_processed": 192,
+  "unique_days": 8,
   "daily_temperature_summary": {
-    "2026-10-01": {
-      "min_temperature": 17.3,
+    "2026-10-10": {
+      "min_temperature": 5.8,
+      "max_temperature": 15.4,
+      "mean_temperature": 11.08
+    },
+    "2026-10-11": {
+      "min_temperature": 11.7,
+      "max_temperature": 16.7,
+      "mean_temperature": 13.85
+    },
+    "2026-10-12": {
+      "min_temperature": 13.8,
+      "max_temperature": 20.4,
+      "mean_temperature": 15.89
+    },
+    "2026-10-13": {
+      "min_temperature": 14.9,
+      "max_temperature": 24.0,
+      "mean_temperature": 18.72
+    },
+    "2026-10-14": {
+      "min_temperature": 13.4,
       "max_temperature": 21.5,
-      "mean_temperature": 19.08
+      "mean_temperature": 15.93
     },
-    "2026-10-02": {
-      "min_temperature": 10.3,
-      "max_temperature": 19.4,
-      "mean_temperature": 15.5
+    "2026-10-15": {
+      "min_temperature": 8.9,
+      "max_temperature": 13.1,
+      "mean_temperature": 10.62
     },
-    "2026-10-03": {
-      "min_temperature": 7.3,
-      "max_temperature": 16.8,
-      "mean_temperature": 11.88
+    "2026-10-16": {
+      "min_temperature": 9.7,
+      "max_temperature": 18.0,
+      "mean_temperature": 13.06
     },
-    "2026-10-04": {
-      "min_temperature": 10.1,
-      "max_temperature": 20.8,
-      "mean_temperature": 14.64
-    },
-    "2026-10-05": {
-      "min_temperature": 7.2,
-      "max_temperature": 17.0,
-      "mean_temperature": 12.19
-    },
-    "2026-10-06": {
-      "min_temperature": 3.0,
-      "max_temperature": 14.1,
-      "mean_temperature": 9.47
-    },
-    "2026-10-07": {
-      "min_temperature": 13.1,
-      "max_temperature": 22.2,
-      "mean_temperature": 17.02
+    "2026-10-17": {
+      "min_temperature": 0.6,
+      "max_temperature": 10.4,
+      "mean_temperature": 5.56
     }
   },
   "daily_precipitation": {
-    "2026-10-01": 0.0,
-    "2026-10-02": 10.799999999999999,
-    "2026-10-03": 0.0,
-    "2026-10-04": 0.0,
-    "2026-10-05": 0.0,
-    "2026-10-06": 0.0,
-    "2026-10-07": 0.4
+    "2026-10-10": 0.0,
+    "2026-10-11": 1.7999999999999998,
+    "2026-10-12": 5.8,
+    "2026-10-13": 4.4,
+    "2026-10-14": 0.4,
+    "2026-10-15": 0.0,
+    "2026-10-16": 1.2000000000000002,
+    "2026-10-17": 0.0
   },
   "warmest_day": {
-    "date": "2026-10-07",
-    "temperature": 22.2
+    "date": "2026-10-13",
+    "temperature": 24.0
   }
 }

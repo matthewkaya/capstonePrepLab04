@@ -7,6 +7,7 @@ from .config import load_settings
 from .exceptions import WeatherSummaryError
 from .logging_setup import setup_logging
 from .report import build_summary, write_summary
+from .run_info import write_run_info
 from .sources import WeatherSource
 
 logger = logging.getLogger(__name__)
@@ -16,6 +17,7 @@ def main(argv: list[str] | None = None) -> int:
     """Run the weather summary application."""
 
     parser = argparse.ArgumentParser(description="Generate a weather summary report.")
+
     parser.add_argument(
         "--config",
         type=Path,
@@ -46,8 +48,13 @@ def main(argv: list[str] | None = None) -> int:
         output_path = settings.output_directory / "summary.json"
         write_summary(summary, output_path)
 
+        run_info_path = settings.output_directory / "run_info.json"
+        write_run_info(settings, run_info_path)
+
         logger.info("Weather summary completed successfully")
+
         print(f"Summary saved to {output_path}")
+        print(f"Run information saved to {run_info_path}")
 
         return 0
 
