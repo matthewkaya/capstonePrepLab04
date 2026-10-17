@@ -15,7 +15,4 @@ class WeatherRecord:
             self.precipitation = None
 
     def __str__(self):
-        return (
-            f"{self.time}: {self.temperature} C, "
-            f"{self.precipitation} mm"
-        )
+        return f"{self.time}: {self.temperature} C, {self.precipitation} mm"

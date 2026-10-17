@@ -3,7 +3,7 @@ import json
 from .aggregations import (
     TemperatureAggregation,
     PrecipitationAggregation,
-    WarmestDayAggregation
+    WarmestDayAggregation,
 )
 
 
@@ -13,16 +13,13 @@ def build_summary(records, source_url):
     aggregations = [
         ("daily_temperature_summary", TemperatureAggregation()),
         ("daily_precipitation", PrecipitationAggregation()),
-        ("warmest_day", WarmestDayAggregation())
+        ("warmest_day", WarmestDayAggregation()),
     ]
 
     summary = {
         "source_url": source_url,
         "records_processed": len(records),
-        "unique_days": len({
-            record.time.split("T")[0]
-            for record in records
-        })
+        "unique_days": len({record.time.split("T")[0] for record in records}),
     }
 
     for name, aggregation in aggregations:

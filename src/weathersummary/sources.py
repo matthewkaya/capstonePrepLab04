@@ -27,26 +27,17 @@ class WeatherSource:
             print("Weather data is missing required hourly fields.")
             return []
 
-        if (
-            len(times) != len(temperatures)
-            or len(times) != len(precipitation)
-        ):
+        if len(times) != len(temperatures) or len(times) != len(precipitation):
             print("Weather data lists have different lengths.")
             return []
 
         records = []
 
-        for time, temperature, rain in zip(
-            times, temperatures, precipitation
-        ):
+        for time, temperature, rain in zip(times, temperatures, precipitation):
             if not isinstance(time, str):
                 continue
 
-            record = WeatherRecord(
-                time,
-                temperature,
-                rain
-            )
+            record = WeatherRecord(time, temperature, rain)
 
             records.append(record)
 

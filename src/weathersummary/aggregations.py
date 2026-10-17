@@ -29,13 +29,12 @@ class TemperatureAggregation(Aggregation):
             summary[date] = {
                 "min_temperature": min(temperatures),
                 "max_temperature": max(temperatures),
-                "mean_temperature": round(
-                    sum(temperatures) / len(temperatures), 2
-                )
+                "mean_temperature": round(sum(temperatures) / len(temperatures), 2),
             }
 
         return summary
-    
+
+
 class PrecipitationAggregation(Aggregation):
     """Calculates total precipitation for each day."""
 
@@ -49,11 +48,10 @@ class PrecipitationAggregation(Aggregation):
             if precipitation is None:
                 continue
 
-            daily_precipitation[date] = (
-                daily_precipitation.get(date, 0) + precipitation
-            )
+            daily_precipitation[date] = daily_precipitation.get(date, 0) + precipitation
 
-        return daily_precipitation    
+        return daily_precipitation
+
 
 class WarmestDayAggregation(Aggregation):
     """Finds the day with the highest maximum temperature."""
@@ -74,12 +72,6 @@ class WarmestDayAggregation(Aggregation):
             ):
                 daily_max_temperatures[date] = temperature
 
-        warmest_day = max(
-            daily_max_temperatures,
-            key=daily_max_temperatures.get
-        )
+        warmest_day = max(daily_max_temperatures, key=daily_max_temperatures.get)
 
-        return {
-            "date": warmest_day,
-            "temperature": daily_max_temperatures[warmest_day]
-        }    
+        return {"date": warmest_day, "temperature": daily_max_temperatures[warmest_day]}
