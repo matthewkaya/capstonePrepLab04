@@ -1,8 +1,8 @@
 import json
 
 from .aggregations import (
-    TemperatureAggregation,
     PrecipitationAggregation,
+    TemperatureAggregation,
     WarmestDayAggregation,
 )
 

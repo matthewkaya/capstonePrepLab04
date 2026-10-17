@@ -54,7 +54,9 @@ class WeatherSource:
 
         records = []
 
-        for time, temperature, rain in zip(times, temperatures, precipitation):
+        for time, temperature, rain in zip(
+            times, temperatures, precipitation, strict=True
+        ):
             if not isinstance(time, str):
                 logger.warning("Skipping record with invalid timestamp")
                 continue
