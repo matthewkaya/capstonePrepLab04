@@ -1,0 +1,13 @@
+[weather]
+source_url = "https://api.open-meteo.com/v1/forecast?latitude=43.65&longitude=-79.38&hourly=temperature_2m,precipitation&past_days=7&forecast_days=1"
+timeout = 10
+
+[output]
+directory = "data/processed"
+
+[processing]
+seed = 42
+sample_size = 100
+
+[logging]
+level = "INFO"
